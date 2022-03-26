@@ -1,0 +1,34 @@
+bison -d -o minij_parse.c minij_parse.y
+
+flex -ominij_lex.c minij_lex.l
+
+gcc -c minij_lex.c 
+gcc -c minij_parse.c 
+gcc -c minij.c 
+gcc -o mjparse.exe minij_lex.o minij.o minij_parse.o
+
+mjparse test1.mj
+mjparse test2.mj
+mjparse test3.mj
+
+
+// Practice on writing the lexical rules for
+// 1. PRINT (System.Out.println)
+// 2. OR (||)
+// 3. EQ (==)
+// 4. LSP ([)
+// 5. RSP (])
+// 6. SEMI (;)
+// 7. ASSIGN (=)
+// 8. COMMENT (see the descripton in Programming Assignment #1)
+// 9. ID (see the descripton in Programming Assignment #1)
+// 10. LIT (see the descripton in Programming Assignment #1)
+
+
+// Practice on writing the grammar rules for
+// 1. type
+// 2. statement
+// 3. exp
+// 4. explist
+// 5. exprest
+// (see the description in Programming Assignment #1)
